@@ -20,6 +20,15 @@ a {
   text-decoration: none;
 }
 
+input,
+textarea,
+select,
+button {
+  /* Để nó kế thừa thẻ cha */
+  font-family: inherit;
+  font-size: inherit;
+}
+
 .container {
   width: 1170px;
   /* Giúp lề trái lề phải vẫn có k/c 24px khi co lại nhỏ hơn kth default */
@@ -146,6 +155,7 @@ a {
 
 .logo__brand {
   display: block;
+  font-family: 'Sora', sans-serif;
   color: #fff;
   font-size: 1.8em;
   font-weight: 400;
@@ -680,7 +690,7 @@ a {
 
 /* --------------------Appointment-------------------- */
 .appointment {
-  margin-top: 85px 0 170px;
+  margin: 85px 0 170px;
 }
 
 .appointment__inner {
@@ -719,4 +729,120 @@ a {
   margin: 18px auto 38px;
   max-width: 617px;
   font-size: 1.6rem;
+}
+
+/* --------------------Footer-------------------- */
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 100px;
+  background: #10375c;
+}
+
+.footer__row {
+  display: grid;
+  /* cột 2 3 (134) cột 1 4 (336)  134 / 336 = 40%*/
+  grid-template-columns: 1fr 0.4fr 0.4fr 1fr;
+  column-gap: 78px;
+}
+
+.footer__desc {
+  margin-top: 20px;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  color: #a9b3bb;
+}
+
+.footer__heading {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.75;
+  color: #fff;
+}
+
+.footer__list {
+  margin-bottom: 28px;
+}
+
+.footer__link {
+  font-size: 1.4rem;
+  line-height: 1.86;
+  color: #a9b3bb;
+  white-space: nowrap;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer__item {
+  margin-bottom: 10px;
+}
+
+.footer__social {
+  display: flex;
+  column-gap: 10px;
+  margin-bottom: 28px;
+}
+
+.footer__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #2e80ce;
+  background: #fff;
+  transition: color, background;
+  transition-duration: 0.25s;
+}
+
+.footer__social-btn:hover {
+  color: #fff;
+  background: #2e80ce;
+}
+
+.footer-form {
+  display: flex;
+  column-gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-form__input {
+  width: 212px;
+  height: 46px;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid #406181;
+  border-radius: 4px;
+  color: #fff;
+  background: transparent;
+}
+
+.footer-form__input::placeholder {
+  font-family: Open Sans;
+  font-size: 1.4rem;
+  line-height: 1.86;
+}
+
+.footer-form__submit {
+  --height: 46px;
+
+  min-width: 108px;
+  font-size: 1.4rem;
+  border-radius: 4px;
+}
+
+.footer__copyright {
+  padding: 28px 0 42px;
+  border-top: 1px solid #406181;
+}
+
+.footer__copyright-text {
+  font-size: 1.4rem;
+  line-height: 26px;
+  text-align: center;
+  color: #aab3ba;
 }
