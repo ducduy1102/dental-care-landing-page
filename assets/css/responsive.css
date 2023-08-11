@@ -1,0 +1,262 @@
+/* ---------------PC--------------- */
+@media screen and (min-width: 992px) {
+  .mobile-header,
+  .toggle-menu {
+    display: none;
+  }
+
+  .show-on-mobile {
+    display: none;
+  }
+
+  .hide-on-pc {
+    display: none;
+  }
+}
+
+/* Bug trồi màn hình service + feature */
+/* ---------------Tablet and mobile--------------- */
+@media screen and (max-width: 991.98px) {
+  .hide-on-tablet {
+    display: none;
+  }
+
+  .tablet-content {
+    max-width: calc(100% - 10px);
+  }
+
+  .logo {
+    position: absolute;
+    /* Căn giữa logo */
+    /* top: 50%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .menu-drawer .logo__brand {
+    color: var(--primary-color);
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+
+  .toggle-menu svg {
+    width: 24px;
+    color: #666;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s ease;
+  }
+
+  .menu-drawer {
+    position: fixed;
+    inset: 0 40% 0 0;
+    background: #fff;
+    z-index: 3;
+    padding: 60px;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+  }
+
+  .menu-drawer ul {
+    margin-top: 32px;
+  }
+
+  .menu-drawer ul a {
+    display: block;
+    padding: 14px 0;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .menu-checkbox:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-checkbox:checked ~ .menu-drawer {
+    transform: translateX(0);
+  }
+
+  .separate {
+    border-top: 1.5px solid #ebebeb;
+  }
+
+  .navbar__link--active {
+    text-shadow: none;
+  }
+
+  .navbar__link--active::before {
+    display: none;
+  }
+
+  .navbar__link:hover,
+  .navbar__link--active {
+    color: #333;
+  }
+
+  /* Hero */
+  .hero .body {
+    flex-direction: column;
+    row-gap: 60px;
+  }
+
+  .hero__content {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero__row {
+    justify-content: center;
+  }
+
+  .hero__media {
+    width: 85%;
+  }
+
+  .hero__images {
+    justify-content: center;
+  }
+
+  .hero__img,
+  .hero__img:last-child {
+    width: 100%;
+  }
+
+  .hero__img:first-child {
+    margin-right: -150px;
+  }
+
+  /* Service */
+  .service__row {
+    flex-direction: column;
+    row-gap: 60px;
+  }
+
+  .service__row .btn {
+    display: block;
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Work */
+  .work .section-heading,
+  .work .section-desc {
+    text-align: center;
+    width: 100%;
+  }
+
+  .work__list {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+  }
+
+  /* Feature */
+  .feature__inner {
+    flex-direction: column-reverse;
+  }
+
+  .feature__inner .section-heading,
+  .feature__inner .section-desc {
+    text-align: center;
+    width: 100%;
+  }
+
+  .feature__cta {
+    display: block;
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translateX(-50%);
+  }
+
+  .feature__media {
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  /* Install */
+  .install__inner {
+    padding: 0 40px;
+  }
+
+  .install__content {
+    width: 100%;
+    margin-left: 35px;
+  }
+
+  /* News */
+  .news__inner {
+    /* width: 100%; */
+    flex-direction: column;
+  }
+
+  .news__content .section-heading,
+  .news__content .section-desc {
+    text-align: center;
+    width: 100%;
+  }
+
+  .news__list {
+    max-width: 80%;
+    margin-bottom: 36px;
+  }
+
+  .news__more {
+    display: block;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  /* Footer */
+  .footer__row {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .logo-tablet {
+    position: relative;
+    display: flex;
+    top: 20px;
+    right: 0;
+  }
+
+  .footer__column:last-child {
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+}
+
+/* ---------------Tablet--------------- */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .show-on-mobile {
+    display: none;
+  }
+}
+
+/* ---------------Mobile--------------- */
+@media screen and (max-width: 767.98px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .menu-drawer {
+    inset: 0 25% 0 0;
+    padding: 40px;
+  }
+
+  .header .sign-up-btn {
+    display: none;
+  }
+}

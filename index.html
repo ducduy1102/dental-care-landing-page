@@ -34,14 +34,26 @@
     <!-- Styles CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css" />
 
+    <!-- Responsive -->
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+
     <title>Shine Smile</title>
   </head>
   <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header fixed">
       <div class="container">
-        <!-- Header top -->
-        <div class="header-top">
+        <div class="body">
+          <!-- Tablet/Mobile Menu -->
+          <label for="menu-checkbox" class="toggle-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+              <path
+                fill="#fff"
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </label>
+
           <!-- Logo -->
           <a href="/">
             <div class="logo">
@@ -54,18 +66,24 @@
           </a>
           <!-- Navbar -->
           <nav class="navbar">
-            <ul class="navbar__list">
+            <ul id="pc-nav" class="navbar__list">
               <li class="navbar__item">
-                <a href="#!" class="navbar__link navbar__link--active">Home</a>
+                <a href="#" class="navbar__link navbar__link--active">Home</a>
               </li>
               <li class="navbar__item">
-                <a href="#!" class="navbar__link">Services</a>
+                <a href="#service" class="navbar__link">Services</a>
               </li>
               <li class="navbar__item">
-                <a href="#!" class="navbar__link">About</a>
+                <a href="#about" class="navbar__link">About</a>
               </li>
               <li class="navbar__item">
-                <a href="#!" class="navbar__link">Doctors</a>
+                <a href="#doctor" class="navbar__link">Doctors</a>
+              </li>
+              <li class="show-on-mobile separate">
+                <a href="#!">Sign in</a>
+              </li>
+              <li class="show-on-mobile">
+                <a href="#!">Sign up</a>
               </li>
             </ul>
           </nav>
@@ -76,33 +94,69 @@
             <button href="#!" class="btn header-action__signup">Sign Up</button>
           </div>
         </div>
+      </div>
+    </header>
 
-        <!-- Hero -->
-        <section class="hero">
-          <!-- Hero content -->
-          <section class="hero__content">
-            <h1 class="hero__heading">Exceptional dental care for all ages.</h1>
-            <p class="hero__desc">Exceptional dental care for all ages. Your great smile begins with a great dentist.</p>
-            <div class="hero__row">
-              <a href="#!" class="btn">Book Online</a>
-              <span class="hero__phone">or call (123) 456-7890</span>
-            </div>
-          </section>
+    <!-- Tablet/Mobile header -->
+    <header class="mobile-header">
+      <input type="checkbox" class="menu-checkbox" name="" id="menu-checkbox" hidden />
 
-          <!-- Hero media -->
-          <div class="hero__media">
-            <figure class="hero__images">
-              <img src="./assets/img/hero-01.jpg" alt="" class="hero__img" />
-              <img src="./assets/img/hero-02.jpg" alt="" class="hero__img" />
-            </figure>
+      <!-- Overlay -->
+      <label for="menu-checkbox" class="menu-overlay"></label>
+
+      <!-- Menu content -->
+      <div class="menu-drawer">
+        <!-- Logo -->
+        <a href="#">
+          <div class="logo">
+            <span class="logo__circle"></span>
+            <span class="logo__text">
+              <span class="logo__brand">shine</span>
+              <span class="logo__brand logo__brand--small">smile</span>
+            </span>
           </div>
-        </section>
+        </a>
+
+        <!-- Navigation -->
+        <ul id="mobile-nav"></ul>
+        <script>
+          const pcNav = document.querySelector('#pc-nav');
+          const mobileNav = document.querySelector('#mobile-nav');
+
+          // copy from pc-nav -> mobile-nav
+          mobileNav.innerHTML = pcNav.innerHTML;
+        </script>
       </div>
     </header>
 
     <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div class="body">
+            <!-- Hero content -->
+            <section class="hero__content">
+              <h1 class="hero__heading">Exceptional dental care for all ages.</h1>
+              <p class="hero__desc">Exceptional dental care for all ages. Your great smile begins with a great dentist.</p>
+              <div class="hero__row">
+                <a href="#!" class="btn">Book Online</a>
+                <span class="hero__phone">or call (123) 456-7890</span>
+              </div>
+            </section>
+
+            <!-- Hero media -->
+            <div class="hero__media">
+              <figure class="hero__images">
+                <img src="./assets/img/hero-01.jpg" alt="" class="hero__img" />
+                <img src="./assets/img/hero-02.jpg" alt="" class="hero__img" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Service -->
-      <section class="service">
+      <section id="service" class="service">
         <div class="container">
           <h2 class="service__heading section-heading">Our services</h2>
           <p class="service__desc section-desc">Exceptional dental care for all ages. Your great smile begins with a great dentist.</p>
@@ -222,11 +276,11 @@
       </section>
 
       <!-- Member -->
-      <section class="member">
+      <section id="doctor" class="member">
         <div class="container">
           <header class="member__header">
             <h2 class="section-heading">Our virtual dentist</h2>
-            <a href="" class="btn member__cta">Meet our dentist</a>
+            <a href="#!" class="btn member__cta">Meet our dentist</a>
           </header>
 
           <!-- Member list -->
@@ -289,7 +343,7 @@
 
       <!-- Install app -->
       <section class="install">
-        <div class="container">
+        <div class="container tablet-content">
           <div class="install__inner">
             <figure>
               <img src="./assets/img/mobile-app.png" alt="" class="install__img" />
@@ -313,7 +367,7 @@
       </section>
 
       <!-- News -->
-      <section class="news">
+      <section id="about" class="news">
         <div class="container">
           <div class="news__inner">
             <section class="news__content">
@@ -321,7 +375,7 @@
               <a href="#!" class="news__more">Read All Blog</a>
 
               <!-- Control -->
-              <div class="news__control control">
+              <div class="news__control control hide-on-tablet">
                 <!-- Previous button -->
                 <div class="control__btn">
                   <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -371,6 +425,23 @@
                 </section>
               </article>
             </div>
+
+            <!-- Control in Tablet/mobiles -->
+            <div class="news__control control hide-on-pc">
+              <!-- Previous button -->
+              <div class="control__btn">
+                <svg width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 1L0.5 6L5.5 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+
+              <!-- Next button -->
+              <button class="control__btn">
+                <svg class="control-next-icon" width="6" height="12" viewBox="0 0 6 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.5 1L0.5 6L5.5 11" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -396,7 +467,7 @@
           <div class="footer__column">
             <!-- Logo -->
             <a href="/">
-              <div class="logo">
+              <div class="logo logo-tablet">
                 <span class="logo__circle"></span>
                 <span class="logo__text">
                   <span class="logo__brand">shine</span>
