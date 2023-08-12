@@ -265,6 +265,7 @@
   /* Header */
   .header.fixed {
     top: -20px;
+    height: 58px;
   }
 
   .header .sign-up-btn {
