@@ -262,6 +262,11 @@
     padding: 40px;
   }
 
+  /* Header */
+  .header.fixed {
+    top: -20px;
+  }
+
   .header .sign-up-btn {
     display: none;
   }
